@@ -1,0 +1,199 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="description" content="This is the AMP Boilerplate.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <meta name="amp-script-src" content="sha384-wiR_UZmo4q0alT-G6Ex5nTYp29iW7Pj4XkBMM7jmGQD5KowM61KAbQvzR7-FlEJs" />
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- Import other AMP Extensions here -->
+    <style amp-custom>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .home-button {
+            margin-top: 8px;
+        }
+
+        .headerbar {
+            height: 50px;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: black;
+        }
+
+        .headerbar h1 {
+            transform: translate(0%, -40%);
+
+        }
+
+        .site-name {
+            margin: auto;
+        }
+
+        article {
+            margin-top: 50px;
+            padding: 10px;
+        }
+
+        article i {
+            background-color: rgb(206, 205, 205);
+        }
+
+        article input {
+
+            float: left;
+        }
+
+        article label {
+
+            float: left;
+        }
+
+        article span {
+
+            float: right;
+            color: red;
+        }
+
+
+        .hamburger {
+            padding-left: 10px;
+        }
+
+        .sidebar {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .sidebar>li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+        }
+
+        .close-sidebar {
+            font-size: 1.5em;
+            padding-left: 5px;
+        }
+    </style>
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+
+    <link rel="canonical" href=".">
+    <title>My AMP Page</title>
+</head>
+
+<body>
+    <header class="headerbar">
+        <div class="site-name">
+            <h1>AMP-Script Simple Demo</h1>
+        </div>
+    </header>
+    <article>
+        <p id='p3'>This site demonstrates how <i>&#60amp-script&#62</i> work.</p>
+        <p> <i>&#60amp-script&#62</i> is mainly used for DOM manipulation</p>
+
+        <amp-script width="500" height="500" script="hello-world" style="border: 1px solid">
+            <button id="button" tabindex=2>Try me out!</button>
+            <p id="p1"></p>
+        </amp-script>
+
+        <amp-script width="500" height="500" src="http://localhost:8000/test.js" style="border: 1px solid">
+            <button id="button" tabindex=2>Try me out!</button>
+            <p id="p1"></p>
+        </amp-script>
+
+    </article>
+
+
+    <!-- Also add [target="amp-script"] to the <script> element. -->
+    <script id="hello-world" type="text/plain" target="amp-script">
+        let x = 0;
+        const btn = document.getElementById('button');
+        btn.addEventListener('click', () => {
+            let p1 = document.getElementById('p1');
+            p1.innerHTML = "Changed Paragraph";
+        });
+    </script>
+</body>
+
+</html>
